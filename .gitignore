@@ -66,12 +66,12 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-!*.exe
-!*.dll
 *.apk
 *.unitypackage
 *.unitypackage
 *.app
+!*.exe
+!*.dll
 
 # Crashlytics generated file
 crashlytics-build.properties
