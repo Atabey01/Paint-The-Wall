@@ -170,7 +170,7 @@ namespace TPSRunerGame.Controllers
         }
         public void TopToOneMoreButton()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
         public void QuitButton()
         {
