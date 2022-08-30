@@ -22,22 +22,26 @@ namespace TPSRunerGame.Controllers
         [SerializeField] float _moveSpeedX = 1f;
         [SerializeField] float _moveSpeedZ = 5f;
         [SerializeField] float _yAxisBoundary = -1.5f;
-        [SerializeField] Animator _animator; 
+        [SerializeField] Animator _animator;
+        [SerializeField] bool _agentStartMove;
         #endregion
 
         Rigidbody _rb;
 
         Mover _mover;
-        
+
         InputManager _inputManager;
+        AgentController _agentController;
 
         public float MoveSpeedX { get => _moveSpeedX; private set => _moveSpeedX = value; }
         public float MoveSpeedZ { get => _moveSpeedZ; private set => _moveSpeedZ = value; }
+        public bool AgentStartsMove { get => _agentStartMove; set => _agentStartMove = value; }
 
         private void Awake()
         {
             _mover = new Mover(this);
             _inputManager = new InputManager();
+            //_agentController = new AgentController();
         }
         private void Start()
         {
@@ -45,6 +49,7 @@ namespace TPSRunerGame.Controllers
             {
                 effect.SetActive(false);
             }
+            AgentStartsMove = false;
         }
         private void OnEnable()
         {
@@ -63,6 +68,7 @@ namespace TPSRunerGame.Controllers
             {
                 if (Input.GetMouseButton(0))
                 {
+                    GameManager.Instance.AgentStartsMove = true;
                     _mover.TickFixed(_inputManager.HorizontalDirection * Time.deltaTime, _inputManager.VerticalDirection, MoveSpeedX, MoveSpeedZ);
                 }
 

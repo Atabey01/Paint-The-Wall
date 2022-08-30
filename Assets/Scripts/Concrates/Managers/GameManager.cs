@@ -18,6 +18,7 @@ namespace TPSRunerGame.Controllers
 
         public GameObject EndPoint;
         public GameObject StartPoint;
+        public bool AgentStartsMove;
 
         #region Singleton
 
@@ -38,6 +39,7 @@ namespace TPSRunerGame.Controllers
         {
             InitializeGameBegin();
             EndPoint.SetActive(true);
+            AgentStartsMove = false;
         }
         #endregion
 

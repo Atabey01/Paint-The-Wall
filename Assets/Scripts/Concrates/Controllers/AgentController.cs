@@ -6,11 +6,13 @@ using UnityEngine.AI;
 public class AgentController : MonoBehaviour
 {
     NavMeshAgent _agent;
+    PlayerController _playerController;
     Vector3 _agentStartPoint;
     public Transform StartPoint;
     Animator _animator;
     Rigidbody _rb;
     Vector3 _agentStartRotation;
+
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
@@ -32,13 +34,14 @@ public class AgentController : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.GameState == TPSRunerGame.Abstracts.GameStates.InGameStart)
+        if (GameManager.Instance.GameState == TPSRunerGame.Abstracts.GameStates.InGameStart && GameManager.Instance.AgentStartsMove == true)
         {
             _agent.SetDestination(GameManager.Instance.EndPoint.transform.position); // Agents End Point Destination
             transform.localRotation = Quaternion.identity;
             _animator.SetBool("isRun", true);
 
         }
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
