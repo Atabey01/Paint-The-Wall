@@ -14,7 +14,8 @@ namespace TPSRunerGame.Controllers
         #region Game Element Veriables
         [Header("Game Element Veriables")]
         [SerializeField] Transform _startPoint;
-        [SerializeField] List<GameObject> _particalEffects;
+        //[SerializeField] List<GameObject> _particalEffects;
+        ParticleSystem effects;
         #endregion
 
         #region Player Movement Veriables
@@ -32,6 +33,7 @@ namespace TPSRunerGame.Controllers
 
         InputManager _inputManager;
         AgentController _agentController;
+        [SerializeField] LevelCreator _levelCreateor;
 
         public float MoveSpeedX { get => _moveSpeedX; private set => _moveSpeedX = value; }
         public float MoveSpeedZ { get => _moveSpeedZ; private set => _moveSpeedZ = value; }
@@ -41,14 +43,12 @@ namespace TPSRunerGame.Controllers
         {
             _mover = new Mover(this);
             _inputManager = new InputManager();
-            //_agentController = new AgentController();
+            _levelCreateor = FindObjectOfType<LevelCreator>();
+
         }
         private void Start()
         {
-            foreach (GameObject effect in _particalEffects)
-            {
-                effect.SetActive(false);
-            }
+
             AgentStartsMove = false;
         }
         private void OnEnable()
@@ -134,10 +134,12 @@ namespace TPSRunerGame.Controllers
         }
         void ShowParticalEffects()
         {
-            foreach (GameObject effect in _particalEffects)
-            {
-                effect.SetActive(true);
-            }
+            //foreach (GameObject effect in _levelDataSO.ParticalEffectsList)
+            //{
+            //    effect.GetComponent<ParticleSystem>().Play();
+            //}
+            _levelCreateor.effect1.GetComponent<ParticleSystem>().Play();
+            _levelCreateor.effect2.GetComponent<ParticleSystem>().Play();
         }
         IEnumerator PaintWall()
         {

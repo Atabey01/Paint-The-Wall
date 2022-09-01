@@ -13,12 +13,13 @@ namespace TPSRunerGame.Controllers
         public event System.Action OnGameOver;
         public event System.Action OnGameLoose;
         public event System.Action OnPainting;
-        public event System.Action<int> OnPainPercentage; 
+        public event System.Action<int> OnPainPercentage;
         #endregion
 
         public GameObject EndPoint;
         public GameObject StartPoint;
         public bool AgentStartsMove;
+        LevelCreator _levelCreator;
 
         #region Singleton
 
@@ -38,6 +39,8 @@ namespace TPSRunerGame.Controllers
         private void Start()
         {
             InitializeGameBegin();
+            _levelCreator = FindObjectOfType<LevelCreator>();
+            EndPoint = _levelCreator.EndPoint;
             EndPoint.SetActive(true);
             AgentStartsMove = false;
         }
@@ -57,7 +60,7 @@ namespace TPSRunerGame.Controllers
         {
             GameState = GameStates.InGameWin;
             OnGameWin?.Invoke();
-        }    
+        }
         public void InitializeGameOver()
         {
             GameState = GameStates.InGameOver;
@@ -81,5 +84,5 @@ namespace TPSRunerGame.Controllers
         {
             OnPainPercentage?.Invoke(percentage);
         }
-    } 
+    }
 }

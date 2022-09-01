@@ -12,6 +12,8 @@ public class AgentController : MonoBehaviour
     Animator _animator;
     Rigidbody _rb;
     Vector3 _agentStartRotation;
+    LevelCreator _levelCreator;
+
 
     private void Awake()
     {
@@ -20,6 +22,8 @@ public class AgentController : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _agentStartPoint = transform.position;
         _agentStartRotation = transform.position;
+
+        _levelCreator = FindObjectOfType<LevelCreator>();
     }
     private void Start()
     {

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6727c7a8b2cff234bbbd2da14dca7237, type: 3}
+  m_Name: Painting Data
+  m_EditorClassIdentifier: 
+  _paintingDistance: 112
+  _painting:
+  - {fileID: 1141341341415485989, guid: 32794f628b2b4444b97204e82246b71e, type: 3}

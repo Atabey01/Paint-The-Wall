@@ -24,11 +24,17 @@ namespace TPSRunerGame.Controllers
         [Header("Painting")]
         [SerializeField] Slider _paintPercentageBar;
         [SerializeField] Text _paintPercentageText;
+        [SerializeField] Texture2D _paintingCursor;
         [SerializeField] GameObject _painting;
         [SerializeField] GameObject _paintWall;
-        [SerializeField] GameObject _paintingElements;        
+        [SerializeField] GameObject _paintingElements;
+        [SerializeField] LevelCreator _levelCreator;
+
         private void OnEnable()
         {
+            _levelCreator = FindObjectOfType<LevelCreator>();
+            
+         
             GameManager.Instance.OnGameBegin += ShowStartPanel;
             GameManager.Instance.OnGameBegin += HidePainting;
             GameManager.Instance.OnGameBegin += HideRankText;
@@ -49,10 +55,15 @@ namespace TPSRunerGame.Controllers
             GameManager.Instance.OnPainting += ShowPainting;
             GameManager.Instance.OnPainting += HideRankText;
             GameManager.Instance.OnPainting += HideFinishLine;
+            GameManager.Instance.OnPainting += ChangeCursor;
 
             GameManager.Instance.OnGameWin += ShowWinPanel;
 
             GameManager.Instance.OnPainPercentage += CalculatePaintPercentage;
+        }
+        private void Start()
+        {
+            print(_levelCreator._levelDataList.Count);
         }
         private void OnDisable()
         {
@@ -75,10 +86,18 @@ namespace TPSRunerGame.Controllers
             GameManager.Instance.OnPainting -= ShowPainting;
             GameManager.Instance.OnPainting -= HideRankText;
             GameManager.Instance.OnPainting -= HideFinishLine;
+            GameManager.Instance.OnPainting -= ChangeCursor;
+
 
             GameManager.Instance.OnGameWin -= ShowWinPanel;
 
             GameManager.Instance.OnPainPercentage -= CalculatePaintPercentage;
+        }
+        private void ChangeCursor()
+        {
+            Cursor.visible = true;
+            Vector2 cursorSize = new Vector2(_paintingCursor.width * 0.2f, _paintingCursor.height * 0.3f);
+            Cursor.SetCursor(_paintingCursor, cursorSize, CursorMode.ForceSoftware);
         }
         void ShowRankText()
         {
@@ -91,6 +110,7 @@ namespace TPSRunerGame.Controllers
         void ShowStartPanel()
         {
             _startPanel.SetActive(true);
+            Cursor.visible = false;
         }
         void HideStartPanel()
         {
@@ -102,7 +122,7 @@ namespace TPSRunerGame.Controllers
         }
         void HidePainting()
         {
-            _painting.SetActive(false);
+            _levelCreator.Painting?.SetActive(false);
             _paintingElements.SetActive(false);
         }
         void ShowLoosePanel()
@@ -123,11 +143,11 @@ namespace TPSRunerGame.Controllers
         }
         void HideFinishLine()
         {
-            _finishLine.SetActive(false);
+            _levelCreator.FinishLine.SetActive(false);
         }
         void ShowFinishLine()
         {
-            _finishLine.SetActive(true);
+            _levelCreator.FinishLine.SetActive(true);
         }
         void ShowDeathPanel()
         {
@@ -152,11 +172,11 @@ namespace TPSRunerGame.Controllers
         IEnumerator MoveGameCamera()
         {
             yield return new WaitForSeconds(2);
-            _painting.SetActive(true);
-            _paintingElements.SetActive(true);
-            _virtualCamera.SetActive(false);
-            _gameCamera.transform.position = _gameCameraPoint.transform.position;
-            _gameCamera.transform.rotation = _gameCameraPoint.transform.rotation;
+            _levelCreator.Painting?.SetActive(true);
+            _paintingElements?.SetActive(true);
+            _virtualCamera?.SetActive(false);
+            _gameCamera.transform.position = _levelCreator.Painting.transform.GetChild(0).transform.position;
+            _gameCamera.transform.rotation = _levelCreator.Painting.transform.GetChild(0).transform.rotation;
         }
         void CalculatePaintPercentage(int percentage)
         {
@@ -170,7 +190,23 @@ namespace TPSRunerGame.Controllers
         }
         public void TopToOneMoreButton()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            Cursor.visible = false;
+
+            //_levelCreator.CurrentLevel = _levelCreator._levelDataList.Count - 1 >= _levelCreator.CurrentLevel + 1 ? _levelCreator.CurrentLevel++ : _levelCreator.CurrentLevel;
+            if (_levelCreator._levelDataList.Count - 1 >= _levelCreator.CurrentLevel + 1)
+            {
+                _levelCreator.CurrentLevel++;
+                print(_levelCreator.CurrentLevel);
+            }
+            else
+            {
+
+            }
+
+
+                PlayerPrefs.SetInt("CurrentLevel", _levelCreator.CurrentLevel);
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         public void QuitButton()
         {

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af05562cda606c74cb1b2a59ce4f92b6, type: 3}
+  m_Name: FinisLine Data
+  m_EditorClassIdentifier: 
+  _finishLine: {fileID: 6951408253715039914, guid: a32894631c66dee479cbbfee646b58d2, type: 3}
+  effect1: {fileID: 1059676270485710996, guid: ba0d3af5564af444aae312bc3fa60b08, type: 3}
+  effect1DestinationX: -6
+  effect1DestinationY: 4.5
+  effect2DestinationX: 6
+  effect2DestinationY: 4.5
+  effect2: {fileID: 1059676270485710996, guid: ba0d3af5564af444aae312bc3fa60b08, type: 3}
+  _endPoint: {fileID: 5127849893887797877, guid: a6b6b42298daf0e4db379dcdc3414bd3, type: 3}
+  _FinishLineDestinationList: 8c000000
