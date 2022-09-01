@@ -3100,7 +3100,6 @@ MonoBehaviour:
   FinishLine: {fileID: 0}
   effect1: {fileID: 0}
   effect2: {fileID: 0}
-  EndPoint: {fileID: 0}
   CurrentLevel: 0
 --- !u!4 &1834729076
 Transform:
@@ -3707,11 +3706,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1463803647521091915, guid: 4cc69888eaeed944a96a17c1aa30d0f3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -3.4238033e-15
+      value: 3.4238033e-15
       objectReference: {fileID: 0}
     - target: {fileID: 1463803647521091915, guid: 4cc69888eaeed944a96a17c1aa30d0f3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.836517e-15
+      value: -1.836517e-15
       objectReference: {fileID: 0}
     - target: {fileID: 1463803647521091915, guid: 4cc69888eaeed944a96a17c1aa30d0f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3816,11 +3815,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1515021690447872897, guid: c68766f75034098458e52e919dada68f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -3.4238033e-15
+      value: 3.4238033e-15
       objectReference: {fileID: 0}
     - target: {fileID: 1515021690447872897, guid: c68766f75034098458e52e919dada68f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.836517e-15
+      value: -1.836517e-15
       objectReference: {fileID: 0}
     - target: {fileID: 1515021690447872897, guid: c68766f75034098458e52e919dada68f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

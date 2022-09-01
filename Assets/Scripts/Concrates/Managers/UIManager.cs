@@ -33,8 +33,8 @@ namespace TPSRunerGame.Controllers
         private void OnEnable()
         {
             _levelCreator = FindObjectOfType<LevelCreator>();
-            
-         
+
+
             GameManager.Instance.OnGameBegin += ShowStartPanel;
             GameManager.Instance.OnGameBegin += HidePainting;
             GameManager.Instance.OnGameBegin += HideRankText;
@@ -204,7 +204,7 @@ namespace TPSRunerGame.Controllers
             }
 
 
-                PlayerPrefs.SetInt("CurrentLevel", _levelCreator.CurrentLevel);
+            PlayerPrefs.SetInt("CurrentLevel", _levelCreator.CurrentLevel);
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

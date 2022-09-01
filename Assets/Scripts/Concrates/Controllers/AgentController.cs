@@ -12,9 +12,6 @@ public class AgentController : MonoBehaviour
     Animator _animator;
     Rigidbody _rb;
     Vector3 _agentStartRotation;
-    LevelCreator _levelCreator;
-
-
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
@@ -22,8 +19,6 @@ public class AgentController : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _agentStartPoint = transform.position;
         _agentStartRotation = transform.position;
-
-        _levelCreator = FindObjectOfType<LevelCreator>();
     }
     private void Start()
     {
@@ -40,7 +35,7 @@ public class AgentController : MonoBehaviour
     {
         if (GameManager.Instance.GameState == TPSRunerGame.Abstracts.GameStates.InGameStart && GameManager.Instance.AgentStartsMove == true)
         {
-            _agent.SetDestination(GameManager.Instance.EndPoint.transform.position); // Agents End Point Destination
+            _agent.SetDestination(LevelCreator.EndPoint.transform.position); // Agents End Point Destination
             transform.localRotation = Quaternion.identity;
             _animator.SetBool("isRun", true);
 

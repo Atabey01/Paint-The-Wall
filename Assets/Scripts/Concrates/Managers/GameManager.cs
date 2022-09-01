@@ -40,7 +40,6 @@ namespace TPSRunerGame.Controllers
         {
             InitializeGameBegin();
             _levelCreator = FindObjectOfType<LevelCreator>();
-            EndPoint = _levelCreator.EndPoint;
             EndPoint.SetActive(true);
             AgentStartsMove = false;
         }
