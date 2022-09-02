@@ -38,6 +38,7 @@ public class LevelCreator : MonoBehaviour
         {
             Painting = Instantiate(_levelDataList[CurrentLevel].Painting[0]);
             Painting.transform.position = new Vector3(0, 0, _levelDataList[CurrentLevel].PaintingDistance);
+            SprayProgressController.CurrentSprayCount = 0;
         }
         #endregion
 

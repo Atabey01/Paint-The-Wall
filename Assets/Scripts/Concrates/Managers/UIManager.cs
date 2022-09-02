@@ -220,7 +220,7 @@ namespace TPSRunerGame.Controllers
             Application.Quit();
         }
 
-        public void SpreyBarHandler(int spreyCount)
+        public void SpreyBarHandler(float spreyCount)
         {
             _spreyProgressBarSlider.value = spreyCount;
         }

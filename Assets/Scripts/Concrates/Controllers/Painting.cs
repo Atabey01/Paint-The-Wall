@@ -100,7 +100,7 @@ public class Painting : MonoBehaviour
         }
 
         //print(percentage);
-        return percentage;
+        return percentage + 1;
     }
 
     void ObjectPooling()

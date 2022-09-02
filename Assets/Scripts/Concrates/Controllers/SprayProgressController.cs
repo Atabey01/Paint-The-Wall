@@ -3,7 +3,7 @@ using TPSRunerGame.Controllers;
 
 public class SprayProgressController : MonoBehaviour
 {
-    public static int CurrentSprayCount = 0;
+    public static float CurrentSprayCount = 0;
 
 
     void OnTriggerEnter(Collider other)

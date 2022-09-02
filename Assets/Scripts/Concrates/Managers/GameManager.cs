@@ -15,7 +15,7 @@ namespace TPSRunerGame.Controllers
         public event Action OnGameLoose;
         public event Action OnPainting;
         public event Action<int> OnPainPercentage;
-        public event Action<int> OnCollectSpray;
+        public event Action<float> OnCollectSpray;
         public event Action<float> OnSpray;
         #endregion
 
@@ -87,7 +87,7 @@ namespace TPSRunerGame.Controllers
             OnPainPercentage?.Invoke(percentage);
         }
 
-        public void SprayCollected(int sprayCount)
+        public void SprayCollected(float sprayCount)
         {
             OnCollectSpray?.Invoke(sprayCount);
         }
