@@ -9,6 +9,7 @@ TagManager:
   - Opponent
   - Brush
   - ObstacleForce
+  - Spray
   layers:
   - Default
   - TransparentFX

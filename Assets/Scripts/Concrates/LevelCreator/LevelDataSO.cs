@@ -12,7 +12,7 @@ public class LevelDataSO : ScriptableObject
     [SerializeField] List<GameObject> _horizontalObstacle;
     [SerializeField] List<int> _horizontalObstacleDestinationList;
     public List<GameObject> HorizontalObstacle { get => _horizontalObstacle; set => _horizontalObstacle = value; }
-    public List<int> HorizontalObstacleDestinationList { get => _horizontalObstacleDestinationList; set => _horizontalObstacleDestinationList = value; } 
+    public List<int> HorizontalObstacleDestinationList { get => _horizontalObstacleDestinationList; set => _horizontalObstacleDestinationList = value; }
     #endregion
 
     #region Platforms
@@ -30,9 +30,11 @@ public class LevelDataSO : ScriptableObject
 
     [SerializeField] int _paintingDistance;
     [SerializeField] List<GameObject> _painting;
+    [SerializeField] List<GameObject> _sprays;
 
     public int PaintingDistance { get => _paintingDistance; set => _paintingDistance = value; }
-    public List<GameObject> Painting { get => _painting; set => _painting = value; } 
+    public List<GameObject> Painting { get => _painting; set => _painting = value; }
+    public List<GameObject> Sprays { get => _sprays; set => _sprays = value; }
     #endregion
 
     #region Finish Line

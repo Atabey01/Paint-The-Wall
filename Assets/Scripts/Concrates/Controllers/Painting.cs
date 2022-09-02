@@ -14,6 +14,7 @@ public class Painting : MonoBehaviour
     [SerializeField] Transform _rendererWall;
     [SerializeField] RenderTexture _wallRenderTexture;
     [SerializeField] int _objectPoolSize = 2000;
+    [SerializeField] float _decreaseRate = 0.01f;
 
     Vector3 _distanceBetweenWalls;
 
@@ -57,6 +58,7 @@ public class Painting : MonoBehaviour
                     brushClone.transform.rotation = hit.transform.rotation;
 
                     CalculatedPercentage();
+                    GameManager.Instance.OnSpraying(_decreaseRate);
                 }
             }
         }
@@ -96,7 +98,6 @@ public class Painting : MonoBehaviour
         {
             GameManager.Instance.IntializeGameWin();
         }
-
 
         //print(percentage);
         return percentage;

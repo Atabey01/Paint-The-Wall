@@ -34,6 +34,17 @@ MonoBehaviour:
   _paintingDistance: 112
   _painting:
   - {fileID: 1141341341415485989, guid: 32794f628b2b4444b97204e82246b71e, type: 3}
+  _sprays:
+  - {fileID: 7431195242203552531, guid: af54c50b85fe9ed43ab9a3400aba4e98, type: 3}
+  - {fileID: 7431195242203552531, guid: af54c50b85fe9ed43ab9a3400aba4e98, type: 3}
+  - {fileID: 7431195242203552531, guid: af54c50b85fe9ed43ab9a3400aba4e98, type: 3}
+  - {fileID: 7431195242203552531, guid: af54c50b85fe9ed43ab9a3400aba4e98, type: 3}
+  - {fileID: 7431195242203552531, guid: af54c50b85fe9ed43ab9a3400aba4e98, type: 3}
+  - {fileID: 7431195242203552531, guid: af54c50b85fe9ed43ab9a3400aba4e98, type: 3}
+  - {fileID: 7431195242203552531, guid: af54c50b85fe9ed43ab9a3400aba4e98, type: 3}
+  - {fileID: 7431195242203552531, guid: af54c50b85fe9ed43ab9a3400aba4e98, type: 3}
+  - {fileID: 7431195242203552531, guid: af54c50b85fe9ed43ab9a3400aba4e98, type: 3}
+  - {fileID: 7431195242203552531, guid: af54c50b85fe9ed43ab9a3400aba4e98, type: 3}
   _finishLine: {fileID: 6951408253715039914, guid: a32894631c66dee479cbbfee646b58d2, type: 3}
   effect1: {fileID: 1059676270485710996, guid: ba0d3af5564af444aae312bc3fa60b08, type: 3}
   effect1DestinationX: -6

@@ -1,19 +1,22 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TPSRunerGame.Abstracts;
+using System;
 
 namespace TPSRunerGame.Controllers
 {
     public class GameManager : MonoBehaviour
     {
         #region Events
-        public event System.Action OnGameBegin;
-        public event System.Action OnGameStart;
-        public event System.Action OnGameWin;
-        public event System.Action OnGameOver;
-        public event System.Action OnGameLoose;
-        public event System.Action OnPainting;
-        public event System.Action<int> OnPainPercentage;
+        public event Action OnGameBegin;
+        public event Action OnGameStart;
+        public event Action OnGameWin;
+        public event Action OnGameOver;
+        public event Action OnGameLoose;
+        public event Action OnPainting;
+        public event Action<int> OnPainPercentage;
+        public event Action<int> OnCollectSpray;
+        public event Action<float> OnSpray;
         #endregion
 
         public GameObject EndPoint;
@@ -82,6 +85,16 @@ namespace TPSRunerGame.Controllers
         public void InitializePaintPurcentage(int percentage)
         {
             OnPainPercentage?.Invoke(percentage);
+        }
+
+        public void SprayCollected(int sprayCount)
+        {
+            OnCollectSpray?.Invoke(sprayCount);
+        }
+        
+        public void OnSpraying(float spreyProgress)
+        {
+            OnSpray?.Invoke(spreyProgress);
         }
     }
 }

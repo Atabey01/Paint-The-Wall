@@ -29,6 +29,7 @@ namespace TPSRunerGame.Controllers
         [SerializeField] GameObject _paintWall;
         [SerializeField] GameObject _paintingElements;
         [SerializeField] LevelCreator _levelCreator;
+        [SerializeField] Slider _spreyProgressBarSlider;
 
         private void OnEnable()
         {
@@ -60,6 +61,9 @@ namespace TPSRunerGame.Controllers
             GameManager.Instance.OnGameWin += ShowWinPanel;
 
             GameManager.Instance.OnPainPercentage += CalculatePaintPercentage;
+
+            GameManager.Instance.OnCollectSpray += SpreyBarHandler;
+            GameManager.Instance.OnSpray += SliderBarValueDecrease;
         }
         private void Start()
         {
@@ -92,6 +96,9 @@ namespace TPSRunerGame.Controllers
             GameManager.Instance.OnGameWin -= ShowWinPanel;
 
             GameManager.Instance.OnPainPercentage -= CalculatePaintPercentage;
+
+            GameManager.Instance.OnCollectSpray -= SpreyBarHandler;
+            GameManager.Instance.OnSpray -= SliderBarValueDecrease;
         }
         private void ChangeCursor()
         {
@@ -213,6 +220,18 @@ namespace TPSRunerGame.Controllers
             Application.Quit();
         }
 
+        public void SpreyBarHandler(int spreyCount)
+        {
+            _spreyProgressBarSlider.value = spreyCount;
+        }
 
+        public void SliderBarValueDecrease(float decreaseRate)
+        {
+            _spreyProgressBarSlider.value -= decreaseRate;
+            if (_spreyProgressBarSlider.value == 0)
+            {
+                GameManager.Instance.InitializeGameOver();
+            }
+        }
     }
 }

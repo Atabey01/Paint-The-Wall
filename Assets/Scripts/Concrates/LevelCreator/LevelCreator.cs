@@ -5,12 +5,11 @@ using UnityEngine.AI;
 
 public class LevelCreator : MonoBehaviour
 {
-    public List<LevelDataSO> _levelDataList;
-
     [SerializeField] List<GameObject> _horizontalObstacleList;
     [SerializeField] List<GameObject> _platformList;
     [SerializeField] List<NavMeshSurface> _navMeshSurfaces;
 
+    public List<LevelDataSO> _levelDataList;
     public GameObject Painting;
     public GameObject RotatingPlatform;
     public GameObject Donut;
@@ -19,9 +18,11 @@ public class LevelCreator : MonoBehaviour
     public GameObject effect2;
     public static GameObject EndPoint;
     public int CurrentLevel;
+
+
     void Awake()
     {
-        //PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
         CurrentLevel = PlayerPrefs.HasKey("CurrentLevel") ? PlayerPrefs.GetInt("CurrentLevel") : 0;
     }
     private void Start()
@@ -113,5 +114,17 @@ public class LevelCreator : MonoBehaviour
             _navMeshSurfaces[i].BuildNavMesh();
         }
         #endregion
+
+        if (_levelDataList[CurrentLevel].Sprays.Count != 0)
+        {
+            for (int i = 0; i < _levelDataList[CurrentLevel].Sprays.Count - 2; i++)
+            {
+                if (_levelDataList[CurrentLevel].Sprays[i] == null)
+                    _levelDataList[CurrentLevel].Sprays[i] = _levelDataList[CurrentLevel].Sprays[i - 1];
+                Vector3 spreyPos = _levelDataList[CurrentLevel].Platforms[i].GetComponent<MeshRenderer>().bounds.size.x
+                 / 2 * Random.Range(-1f, 1f) * Vector3.right;
+                GameObject spreyClone = Instantiate(_levelDataList[CurrentLevel].Sprays[i], spreyPos + new Vector3(0, _levelDataList[CurrentLevel].Sprays[i].GetComponent<MeshRenderer>().bounds.size.y, _platformList[i + 1].transform.position.z), Quaternion.identity);
+            }
+        }
     }
 }
