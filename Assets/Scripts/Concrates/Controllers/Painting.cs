@@ -14,9 +14,10 @@ public class Painting : MonoBehaviour
     [SerializeField] Transform _rendererWall;
     [SerializeField] RenderTexture _wallRenderTexture;
     [SerializeField] int _objectPoolSize = 2000;
-    [SerializeField] float _decreaseRate = 0.01f;
+    [SerializeField] float _decreaseRate = 0.005f;
 
     Vector3 _distanceBetweenWalls;
+    LevelCreator _levelCreator;
 
     Queue<GameObject> _objectPool;
 
@@ -26,12 +27,15 @@ public class Painting : MonoBehaviour
     void Awake()
     {
         _objectPool = new Queue<GameObject>(); // Creating A Queue For Object Pool
+        _levelCreator = FindObjectOfType<LevelCreator>();
+
 
         ObjectPooling();
     }
     void Start()
     {
         _distanceBetweenWalls = _rendererWall.transform.position - transform.position;
+        _decreaseRate += _levelCreator.CurrentLevel * 0.001f;
     }
     void FixedUpdate()
     {

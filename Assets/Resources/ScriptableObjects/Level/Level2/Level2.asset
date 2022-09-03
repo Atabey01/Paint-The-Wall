@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a0b1870271ed44aa202f46ed7a278f, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  _horizontalObstacle:
+  - {fileID: 4536682209440582789, guid: 033ba67c55352db4cbdb30c916ae178e, type: 3}
+  - {fileID: 4536682209440582789, guid: 033ba67c55352db4cbdb30c916ae178e, type: 3}
+  _horizontalObstacleDestinationList: 140000006e000000
+  _platformList:
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  _platformsDestinationList: 030000000d00000017000000210000002b000000400000004a000000540000005e00000068000000720000007c0000008600000090000000
+  _paintingDistance: 140
+  _painting:
+  - {fileID: 1141341341415485989, guid: 32794f628b2b4444b97204e82246b71e, type: 3}
+  _sprays:
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  - {fileID: 7334271050356663302, guid: c99c3f85a0a89c742a9cdc02a2a2a2f4, type: 3}
+  _finishLine: {fileID: 6951408253715039914, guid: a32894631c66dee479cbbfee646b58d2, type: 3}
+  effect1: {fileID: 1059676270485710996, guid: ba0d3af5564af444aae312bc3fa60b08, type: 3}
+  effect1DestinationX: 0
+  effect1DestinationY: 0
+  effect2DestinationX: 0
+  effect2DestinationY: 0
+  effect2: {fileID: 509297054450084547, guid: 83989e1451b893a45aa58ba480986d0b, type: 3}
+  _endPoint: {fileID: 5127849893887797877, guid: a6b6b42298daf0e4db379dcdc3414bd3, type: 3}
+  _FinishLineDestinationList: 8c000000
+  _rotatingPlatformList:
+  - {fileID: 2438379396080430340, guid: 6885319bd8f2cd84382be9ee43cd10da, type: 3}
+  - {fileID: 2438379396080430340, guid: 6885319bd8f2cd84382be9ee43cd10da, type: 3}
+  - {fileID: 2438379396080430340, guid: 6885319bd8f2cd84382be9ee43cd10da, type: 3}
+  _rotatingPlatformDestinationX: 0
+  _rotatingPlatformDestinationY: -16.2
+  _rotatingPlatformDestinationZ: 53.5
+  _donut:
+  - {fileID: 1486796821286452571, guid: f447072f96a2e8a408c814d1943c45cd, type: 3}
+  _donutDestination: 80

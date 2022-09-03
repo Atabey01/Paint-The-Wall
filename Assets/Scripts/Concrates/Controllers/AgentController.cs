@@ -38,9 +38,10 @@ public class AgentController : MonoBehaviour
             _agent.SetDestination(LevelCreator.EndPoint.transform.position); // Agents End Point Destination
             transform.localRotation = Quaternion.identity;
             _animator.SetBool("isRun", true);
-
+            if (transform.position.y < -4f)
+                StartFromBegining();
         }
-        
+
     }
     private void OnCollisionEnter(Collision collision)
     {

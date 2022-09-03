@@ -87,7 +87,6 @@ namespace TPSRunerGame.Controllers
                     _animator.SetBool("isRun", true);
                 }
             }
-            print(GameManager.Instance.GameState);
         }
         private void OnCollisionEnter(Collision collision)
         {

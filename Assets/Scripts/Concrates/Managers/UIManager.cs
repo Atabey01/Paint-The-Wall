@@ -31,11 +31,12 @@ namespace TPSRunerGame.Controllers
         [SerializeField] LevelCreator _levelCreator;
         [SerializeField] Slider _spreyProgressBarSlider;
 
+
+        void Start() => _spreyProgressBarSlider.maxValue = _levelCreator._levelDataList[_levelCreator.CurrentLevel].PlatformList.Count - 2;
+
         private void OnEnable()
         {
             _levelCreator = FindObjectOfType<LevelCreator>();
-
-
             GameManager.Instance.OnGameBegin += ShowStartPanel;
             GameManager.Instance.OnGameBegin += HidePainting;
             GameManager.Instance.OnGameBegin += HideRankText;
@@ -65,10 +66,7 @@ namespace TPSRunerGame.Controllers
             GameManager.Instance.OnCollectSpray += SpreyBarHandler;
             GameManager.Instance.OnSpray += SliderBarValueDecrease;
         }
-        private void Start()
-        {
-            print(_levelCreator._levelDataList.Count);
-        }
+
         private void OnDisable()
         {
             GameManager.Instance.OnGameBegin -= ShowStartPanel;
@@ -199,17 +197,7 @@ namespace TPSRunerGame.Controllers
         {
             Cursor.visible = false;
 
-            //_levelCreator.CurrentLevel = _levelCreator._levelDataList.Count - 1 >= _levelCreator.CurrentLevel + 1 ? _levelCreator.CurrentLevel++ : _levelCreator.CurrentLevel;
-            if (_levelCreator._levelDataList.Count - 1 >= _levelCreator.CurrentLevel + 1)
-            {
-                _levelCreator.CurrentLevel++;
-                print(_levelCreator.CurrentLevel);
-            }
-            else
-            {
-
-            }
-
+            _levelCreator.CurrentLevel++;
 
             PlayerPrefs.SetInt("CurrentLevel", _levelCreator.CurrentLevel);
 
@@ -232,6 +220,15 @@ namespace TPSRunerGame.Controllers
             {
                 GameManager.Instance.InitializeGameOver();
             }
+        }
+
+        public void GameReset()
+        {
+            _levelCreator.CurrentLevel = 0;
+            
+            PlayerPrefs.SetInt("CurrentLevel", 0);
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

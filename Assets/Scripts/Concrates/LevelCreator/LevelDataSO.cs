@@ -18,9 +18,9 @@ public class LevelDataSO : ScriptableObject
     #region Platforms
     [Header("Platforms Data")]
     //public  PlatformsSO PlatformsSO;
-    [SerializeField] List<GameObject> _platforms;
+    [SerializeField] List<GameObject> _platformList;
     [SerializeField] List<int> _platformsDestinationList;
-    public List<GameObject> Platforms { get => _platforms; set => _platforms = value; }
+    public List<GameObject> PlatformList { get => _platformList; set => _platformList = value; }
     public List<int> PlatformsDestinationList { get => _platformsDestinationList; set => _platformsDestinationList = value; }
     #endregion
 
@@ -64,14 +64,14 @@ public class LevelDataSO : ScriptableObject
     [Header("Rotating Platform Data")]
     //public RotatingPlatformSO RotatingPlatformSO;
 
-    [SerializeField] List<GameObject> _rotatingPlatform;
+    [SerializeField] List<GameObject> _rotatingPlatformList;
 
     [SerializeField] float _rotatingPlatformDestinationX;
     [SerializeField] float _rotatingPlatformDestinationY;
     [SerializeField] float _rotatingPlatformDestinationZ;
 
 
-    public List<GameObject> RotatingPlatform { get => _rotatingPlatform; set => _rotatingPlatform = value; }
+    public List<GameObject> RotatingPlatformList { get => _rotatingPlatformList; set => _rotatingPlatformList = value; }
     public float RotatingPlatformDestinationX { get => _rotatingPlatformDestinationX; set => _rotatingPlatformDestinationX = value; }
     public float RotatingPlatformDestinationY { get => _rotatingPlatformDestinationY; set => _rotatingPlatformDestinationY = value; }
     public float RotatingPlatformDestinationZ { get => _rotatingPlatformDestinationZ; set => _rotatingPlatformDestinationZ = value; }
