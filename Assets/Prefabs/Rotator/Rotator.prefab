@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 919132149335221643}
   - component: {fileID: 919132149335221640}
   - component: {fileID: 6792162394674451167}
+  - component: {fileID: 5558535901524750176}
   m_Layer: 0
   m_Name: Rotator
   m_TagString: Untagged
@@ -34,6 +35,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1772685, y: -0.8399999, z: 82.7}
   m_LocalScale: {x: 60, y: 60, z: 60}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4660802994441388472}
   m_Father: {fileID: 0}
@@ -58,6 +60,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -130,10 +133,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.028896522
-  m_Height: 0.30200014
+  m_Radius: 0.057238963
+  m_Height: 0.30200025
   m_Direction: 1
-  m_Center: {x: -0.000000007947286, y: 0.11148995, z: -0.0043869657}
+  m_Center: {x: -0.000000008452227, y: 0.111489184, z: -0.016275078}
 --- !u!136 &919132149335221643
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -172,7 +175,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c98f266b331f1f41870488d1ecae93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotator: {fileID: 0}
+  _rotator: {fileID: 11400000, guid: 6a0792b622aa49845b2aa53c52ccb9d1, type: 2}
+--- !u!64 &5558535901524750176
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5468969796777735921}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7554973115994324875, guid: 63bfeb999b5b39e40aeaebe13875de9b, type: 3}
 --- !u!1001 &5126440925618038355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -238,14 +255,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b43899347a8959b4e9a53dc277b32794, type: 3}
---- !u!1 &5468969795992017666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b43899347a8959b4e9a53dc277b32794, type: 3}
-  m_PrefabInstance: {fileID: 5126440925618038355}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4660802994441388472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b43899347a8959b4e9a53dc277b32794, type: 3}
+  m_PrefabInstance: {fileID: 5126440925618038355}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5468969795992017666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b43899347a8959b4e9a53dc277b32794, type: 3}
   m_PrefabInstance: {fileID: 5126440925618038355}
   m_PrefabAsset: {fileID: 0}
 --- !u!136 &5126440925642243529

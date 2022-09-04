@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6513300826587813150}
   - component: {fileID: 8225277956832584574}
   - component: {fileID: 1485583333072426932}
+  - component: {fileID: -3669196522265165388}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -128,3 +129,15 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &-3669196522265165388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092914240614277185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bd733d942790045a9d819270d6868f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

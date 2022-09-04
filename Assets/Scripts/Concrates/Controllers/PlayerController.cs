@@ -11,6 +11,7 @@ namespace TPSRunerGame.Controllers
 {
     public class PlayerController : MonoBehaviour//Subject
     {
+        [SerializeField] AudioManager _audioManager;
         #region Game Element Veriables
         [Header("Game Element Veriables")]
         [SerializeField] Transform _startPoint;
@@ -98,6 +99,7 @@ namespace TPSRunerGame.Controllers
             {
                 //gameover
                 GameManager.Instance.IntializePainting();
+                _audioManager.PlayWinSound();
                 ShowParticalEffects();
                 collision.gameObject.SetActive(false);
             }

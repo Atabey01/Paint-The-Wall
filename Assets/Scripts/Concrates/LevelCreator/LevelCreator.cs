@@ -6,6 +6,9 @@ using UnityEngine.AI;
 public class LevelCreator : MonoBehaviour
 {
     [SerializeField] List<GameObject> _horizontalObstacleList;
+    [SerializeField] List<GameObject> _donutList;
+    [SerializeField] List<GameObject> _rotatorList;
+    [SerializeField] List<GameObject> _staticObstacleList;
     [SerializeField] List<GameObject> _platformList;
     [SerializeField] List<NavMeshSurface> _navMeshSurfaces;
 
@@ -25,7 +28,6 @@ public class LevelCreator : MonoBehaviour
 
     void Awake()
     {
-        // PlayerPrefs.DeleteAll();
         CurrentLevel = PlayerPrefs.HasKey("CurrentLevel") ? PlayerPrefs.GetInt("CurrentLevel") : 0;
     }
     private void Start()
@@ -110,18 +112,41 @@ public class LevelCreator : MonoBehaviour
                 allPlatforms.RemoveAt(randomIndex);
             }
 
-
-
             k -= 1;
         }
 
         newLevel.FinishLine.transform.position = lastPlatform.transform.position;
         newLevel.GameEndPoint.transform.position = lastPlatform.transform.position;
-        newLevel.Sprays = new List<GameObject>(new GameObject[newLevel.PlatformList.Count]);
         newLevel.Painting[0].transform.position = newLevel.FinishLine.transform.position;
+
+        newLevel.Sprays = new List<GameObject>(new GameObject[newLevel.PlatformList.Count]);
         for (int i = 0; i < newLevel.Sprays.Count; i++)
         {
             newLevel.Sprays[i] = _levelDataList[1].Sprays[0];
+        }
+
+        newLevel.HorizontalObstacle = new List<GameObject>(new GameObject[Mathf.CeilToInt(newLevel.PlatformList.Count / 8)]);
+        for (int i = 0; i < newLevel.HorizontalObstacle.Count; i++)
+        {
+            newLevel.HorizontalObstacle[i] = _levelDataList[1].HorizontalObstacle[0];
+        }
+
+        newLevel.Donut = new List<GameObject>(new GameObject[Mathf.CeilToInt(newLevel.PlatformList.Count / 8)]);
+        for (int i = 0; i < newLevel.Donut.Count; i++)
+        {
+            newLevel.Donut[i] = _levelDataList[1].Donut[0];
+        }
+
+        newLevel.RotatorList = new List<GameObject>(new GameObject[Mathf.CeilToInt(newLevel.PlatformList.Count / 8)]);
+        for (int i = 0; i < newLevel.RotatorList.Count; i++)
+        {
+            newLevel.RotatorList[i] = _levelDataList[1].RotatorList[0];
+        }
+
+        newLevel.StaticObstacleList = new List<GameObject>(new GameObject[Mathf.CeilToInt(newLevel.PlatformList.Count / 10)]);
+        for (int i = 0; i < newLevel.StaticObstacleList.Count; i++)
+        {
+            newLevel.StaticObstacleList[i] = _levelDataList[1].StaticObstacleList[0];
         }
 
         return newLevel;
@@ -171,13 +196,33 @@ public class LevelCreator : MonoBehaviour
             {
                 GameObject horizontalObsClone = Instantiate(obstacle);
                 _horizontalObstacleList.Add(horizontalObsClone);
-
             }
+
             if (_isNewLevel == false)
                 for (int i = 0; i < _horizontalObstacleList.Count; i++)
                 {
                     _horizontalObstacleList[i].transform.position = new Vector3(0, 2.8f, _levelDataList[CurrentLevel].HorizontalObstacleDestinationList[i]);
                 }
+            else
+            {
+                for (int i = 0; i < _horizontalObstacleList.Count; i++)
+                {
+                    int randomIndex = Random.Range(1, _levelDataList[CurrentLevel].PlatformList.Count - 1);
+
+                    Platform platform = _levelDataList[CurrentLevel].PlatformList[randomIndex].GetComponent<Platform>();
+                    if (platform.HasObstacle == false)
+                    {
+                        _horizontalObstacleList[i].transform.position = new Vector3(0, 2.8f, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
+                        Debug.Log(_levelDataList[CurrentLevel].PlatformList[randomIndex].gameObject.name + "HO");
+                        platform.HasObstacle = true;
+                    }
+                    else
+                    {
+                        i -= 1;
+                        continue;
+                    }
+                }
+            }
         }
 
         #endregion
@@ -209,11 +254,96 @@ public class LevelCreator : MonoBehaviour
         #region Donut
         if (_levelDataList[CurrentLevel].Donut.Count != 0)
         {
-            Donut = Instantiate(_levelDataList[CurrentLevel].Donut[0]);
+            for (int i = 0; i < _levelDataList[CurrentLevel].Donut.Count; i++)
+            {
+                GameObject donut = Instantiate(_levelDataList[CurrentLevel].Donut[0]);
+                _donutList.Add(donut);
+            }
             if (_isNewLevel == false)
-                Donut.transform.position = new Vector3(0, 0, _levelDataList[CurrentLevel].DonutDestination);
+                for (int i = 0; i < _donutList.Count; i++)
+                    _donutList[i].transform.position = new Vector3(0, 0, _levelDataList[CurrentLevel].DonutDestination);
+            else
+            {
+                for (int i = 0; i < _levelDataList[CurrentLevel].Donut.Count; i++)
+                {
+                    int randomIndex = Random.Range(1, _levelDataList[CurrentLevel].PlatformList.Count - 1);
+
+                    Platform platform = _levelDataList[CurrentLevel].PlatformList[randomIndex].GetComponent<Platform>();
+                    if (platform.HasObstacle == false)
+                    {
+                        _donutList[i].transform.position = new Vector3(0, 0, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
+                        platform.HasObstacle = true;
+                    }
+                    else
+                    {
+                        i -= 1;
+                        continue;
+                    }
+                }
+            }
         }
         #endregion
+
+        #region  Rotator
+
+        if (_levelDataList[CurrentLevel].RotatorList.Count != 0 && _isNewLevel == true)
+        {
+            for (int i = 0; i < _levelDataList[CurrentLevel].RotatorList.Count; i++)
+            {
+                GameObject rotator = Instantiate(_levelDataList[CurrentLevel].RotatorList[0]);
+                _rotatorList.Add(rotator);
+            }
+            for (int i = 0; i < _levelDataList[CurrentLevel].RotatorList.Count; i++)
+            {
+                int randomIndex = Random.Range(1, _levelDataList[CurrentLevel].PlatformList.Count - 1);
+
+                Platform platform = _levelDataList[CurrentLevel].PlatformList[randomIndex].GetComponent<Platform>();
+                if (platform.HasObstacle == false)
+                {
+                    _rotatorList[i].transform.position = new Vector3(Random.Range(0, 2) == 0 ? -3 : 3, 1.5f, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
+                    platform.HasObstacle = true;
+                }
+                else
+                {
+                    i -= 1;
+                    continue;
+                }
+            }
+        }
+
+        #endregion
+
+        #region  Static Obstacle
+
+        if (_levelDataList[CurrentLevel].StaticObstacleList.Count != 0 && _isNewLevel == true)
+        {
+            for (int i = 0; i < _levelDataList[CurrentLevel].StaticObstacleList.Count; i++)
+            {
+                GameObject staticObstacle = Instantiate(_levelDataList[CurrentLevel].StaticObstacleList[0]);
+                _staticObstacleList.Add(staticObstacle);
+            }
+            for (int i = 0; i < _levelDataList[CurrentLevel].StaticObstacleList.Count; i++)
+            {
+                int randomIndex = Random.Range(1, _levelDataList[CurrentLevel].PlatformList.Count - 1);
+
+                Platform platform = _levelDataList[CurrentLevel].PlatformList[randomIndex].GetComponent<Platform>();
+                if (platform.HasObstacle == false)
+                {
+                    _staticObstacleList[i].transform.position = new Vector3(0, 1.5f, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
+                    platform.HasObstacle = true;
+                }
+                else
+                {
+                    i -= 1;
+                    continue;
+                }
+            }
+        }
+
+        #endregion
+
+        #region  Spray
+
         if (_isNewLevel == true)
             _platformList = _levelDataList[CurrentLevel].PlatformList;
 
@@ -224,14 +354,13 @@ public class LevelCreator : MonoBehaviour
                 Vector3 spreyPos = _levelDataList[CurrentLevel].PlatformList[i].GetComponent<MeshRenderer>().bounds.size.x
                  / 2 * Random.Range(-0.75f, 0.75f) * Vector3.right;
 
-                Debug.Log(_levelDataList[CurrentLevel].Sprays[i]);
-
                 GameObject spreyClone = Instantiate(_levelDataList[CurrentLevel].Sprays[i],
                  spreyPos + new Vector3(0, _levelDataList[CurrentLevel].Sprays[i].GetComponent<MeshRenderer>().bounds.size.y / 2, _platformList[i + 1].transform.position.z),
                    _levelDataList[CurrentLevel].Sprays[i].transform.rotation);
 
             }
         }
+        #endregion
 
         #region Bake NavMesh
         _navMeshSurfaces[0].BuildNavMesh();

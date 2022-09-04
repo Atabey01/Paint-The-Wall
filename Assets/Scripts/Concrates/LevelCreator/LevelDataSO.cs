@@ -86,4 +86,12 @@ public class LevelDataSO : ScriptableObject
     public float DonutDestination { get => _donutDestination; set => _donutDestination = value; }
 
     #endregion
+
+    [Header("Rotator")]
+    [SerializeField] List<GameObject> _rotatorList;
+    public List<GameObject> RotatorList { get => _rotatorList; set => _rotatorList = value; }
+
+    [Header("Static Obstacle")]
+    [SerializeField] List<GameObject> _staticObstacleList;
+    public List<GameObject> StaticObstacleList { get => _staticObstacleList; set => _staticObstacleList = value; }
 }

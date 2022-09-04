@@ -126,6 +126,5 @@ public class Painting : MonoBehaviour
         _objectPool.Enqueue(brushClone);
 
         return brushClone;
-
     }
 }

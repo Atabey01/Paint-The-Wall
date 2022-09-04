@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc3a954ad8caaf40894b55dc07d905b, type: 3}
   m_Name: RotatorStick
   m_EditorClassIdentifier: 
-  _torque: {x: 0, y: 15000, z: 0}
+  _torque: {x: 0, y: -15000, z: 0}
