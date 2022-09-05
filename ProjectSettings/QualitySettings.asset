@@ -40,7 +40,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 2bfa176a11e570147a7ad6a3a498475a, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Low
@@ -76,7 +76,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 0677001dbada51b46b2a4839cb1d773a, type: 2}
     excludedTargetPlatforms:
     - Android
   - serializedVersion: 2
@@ -113,7 +113,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: ba4c44889653754478968e7b499a31af, type: 2}
     excludedTargetPlatforms:
     - Android
   - serializedVersion: 2
@@ -150,7 +150,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: c155e0f1d3d354f40825a9ae9e114faa, type: 2}
     excludedTargetPlatforms:
     - Android
   - serializedVersion: 2
@@ -187,7 +187,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 96b52a3db8ddf4444af0e1d38a7950d5, type: 2}
     excludedTargetPlatforms:
     - Android
   - serializedVersion: 2
@@ -224,7 +224,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 041d9ef90fb94354d83a9b10963ae825, type: 2}
     excludedTargetPlatforms:
     - Android
   m_PerPlatformDefaultQuality:

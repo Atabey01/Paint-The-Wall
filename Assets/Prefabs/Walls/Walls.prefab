@@ -40,6 +40,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5570830799790225717}
     m_Modifications:
+    - target: {fileID: 2904839213833861674, guid: a676531664102524fbd281016a486d6c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8638418809910016881, guid: a676531664102524fbd281016a486d6c, type: 3}
       propertyPath: m_Name
       value: StaticObstacle
@@ -176,6 +180,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0188ae7dd007bff4ba9c39f835fc4df8, type: 3}
+--- !u!1 &7226190899521008554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9149182547039942117, guid: 0188ae7dd007bff4ba9c39f835fc4df8, type: 3}
+  m_PrefabInstance: {fileID: 1923313409560462927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &2085111656980281
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7226190899521008554}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.064, y: 0.045, z: 0.021000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &7999315406314301712 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8481331025932496735, guid: 0188ae7dd007bff4ba9c39f835fc4df8, type: 3}

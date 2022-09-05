@@ -128,7 +128,7 @@ ConstantForce:
   m_Enabled: 1
   m_Force: {x: 0, y: 0, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: -15000}
+  m_Torque: {x: 0, y: 0, z: -7500}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &8085556717037603113
 MonoBehaviour:
