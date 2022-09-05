@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class FPSControl : MonoBehaviour
 {
-    public Text fpsText;
-    public float deltaTime;
+    public Text FpsText;
+    public Text CurrentLevel;
+    public float DeltaTime;
 
     void Start()
     {
         Application.targetFrameRate = Screen.currentResolution.refreshRate;
+        CurrentLevel.text = "Level:" + (PlayerPrefs.GetInt("CurrentLevel") + 1).ToString();
     }
     void Update()
     {
-        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
-        float fps = 1.0f / deltaTime;
-        fpsText.text = Mathf.Ceil(fps).ToString();
+        DeltaTime += (Time.deltaTime - DeltaTime) * 0.1f;
+        float fps = 1.0f / DeltaTime;
+        FpsText.text = "FPS:" + Mathf.Ceil(fps).ToString();
     }
 }

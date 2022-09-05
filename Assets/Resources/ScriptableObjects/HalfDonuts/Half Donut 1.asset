@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Half Donut 1
   m_EditorClassIdentifier: 
   _moveSpeed: 0.7
-  _moveX: 10
+  _moveX: 7
   _ease: 17

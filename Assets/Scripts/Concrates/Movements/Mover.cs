@@ -21,7 +21,7 @@ namespace TPSRunerGame.Movements
             // _playerRigidbody.transform.Translate(verticalDirection);
 
             Vector3 horizontalDirection = Vector3.right * horizontal * moveSpeedx;
-            _playerRigidbody.velocity = horizontalDirection + verticalDirection;
+            _playerRigidbody.AddForce(horizontalDirection + verticalDirection, ForceMode.Acceleration);
         }
     }
 
