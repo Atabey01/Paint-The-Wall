@@ -26,11 +26,11 @@ namespace TPSRunerGame.Abstracts.Inputs
                 _firstMousePosition = Input.mousePosition;
             }
 
-            else if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0))
             {
                 VerticalDirection = 1f;
                 _lastMousePosition = Input.mousePosition;
-                HorizontalDirection = _lastMousePosition.x - _firstMousePosition.x;
+                HorizontalDirection = Input.GetAxis("Mouse X");
             }
             if (Input.GetMouseButtonUp(0))
             {

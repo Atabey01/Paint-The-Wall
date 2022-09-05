@@ -42,7 +42,8 @@ namespace TPSRunerGame.Controllers
 
         private void Awake()
         {
-            _mover = new Mover(this);
+            Rigidbody playerRigidbody = GetComponent<Rigidbody>();
+            _mover = new Mover(playerRigidbody);
             _inputManager = new InputManager();
             _levelCreateor = FindObjectOfType<LevelCreator>();
 
@@ -59,24 +60,27 @@ namespace TPSRunerGame.Controllers
             GameManager.Instance.OnGameLoose += LooseGame;
             GameManager.Instance.OnPainting += PaintTheWall;
         }
-        private void Update()
+
+        void Update()
         {
             _inputManager.GetInputData();
         }
+
         private void FixedUpdate()
         {
             if (GameManager.Instance.GameState == Abstracts.GameStates.InGameStart)
             {
+                if (transform.position.y <= _yAxisBoundary)
+                {
+                    GameManager.Instance.InitializeGameOver();
+                }
+
                 if (Input.GetMouseButton(0))
                 {
                     GameManager.Instance.AgentStartsMove = true;
                     _mover.TickFixed(_inputManager.HorizontalDirection * Time.deltaTime, _inputManager.VerticalDirection, MoveSpeedX, MoveSpeedZ);
                 }
 
-                else if (transform.position.y <= _yAxisBoundary)
-                {
-                    GameManager.Instance.InitializeGameOver();
-                }
 
                 if (_inputManager.VerticalDirection == 0)
                 {
@@ -89,6 +93,7 @@ namespace TPSRunerGame.Controllers
                 }
             }
         }
+
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("Obstacle"))
@@ -110,8 +115,8 @@ namespace TPSRunerGame.Controllers
             GameManager.Instance.OnGameOver -= Respawn;
             GameManager.Instance.OnGameLoose -= LooseGame;
             GameManager.Instance.OnPainting -= PaintTheWall;
-
         }
+
         void StartGame()
         {
             transform.position = _startPoint.transform.position;
@@ -151,6 +156,16 @@ namespace TPSRunerGame.Controllers
         void LooseGame()
         {
             _animator.SetBool("isRun", false);
+        }
+
+        void LockCursor()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        void UnlockCursor()
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

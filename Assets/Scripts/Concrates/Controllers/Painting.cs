@@ -28,45 +28,49 @@ public class Painting : MonoBehaviour
     {
         _objectPool = new Queue<GameObject>(); // Creating A Queue For Object Pool
         _levelCreator = FindObjectOfType<LevelCreator>();
-
-
         ObjectPooling();
     }
     void Start()
     {
         _distanceBetweenWalls = _rendererWall.transform.position - transform.position;
         _decreaseRate += _levelCreator.CurrentLevel * 0.001f;
+
+        StartCoroutine(PaintingCor());
     }
-    void FixedUpdate()
+
+    IEnumerator PaintingCor()
     {
-        if (GameManager.Instance.GameState == GameStates.InPanting)
+        while (GameManager.Instance.GameState == GameStates.InPanting)
         {
-            if (Input.GetMouseButton(0))
+            yield return new WaitForSeconds(0.05f);
+            if (!Input.GetMouseButton(0))
+                continue;
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Casting A Ray From Screen To Wall
+            RaycastHit hit;
+            Vector3 brushPosition = Vector3.zero;
+
+            if (Physics.Raycast(ray, out hit))
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Casting A Ray From Screen To Wall
-                RaycastHit hit;
-                Vector3 brushPosition = Vector3.zero;
+                MeshCollider meshCollider = hit.collider as MeshCollider;
+                if (meshCollider == null)
+                    yield return null;
 
-                if (Physics.Raycast(ray, out hit))
-                {
-                    MeshCollider meshCollider = hit.collider as MeshCollider;
-                    if (meshCollider == null)
-                        return;
+                brushPosition = hit.point + _distanceBetweenWalls;
 
-                    brushPosition = hit.point + _distanceBetweenWalls;
+                GameObject brushClone = GetPooledObject();
 
-                    GameObject brushClone = GetPooledObject();
+                brushClone.transform.localPosition = brushPosition; // Locate The Brush Position
+                brushClone.transform.localScale = Vector3.one * _brushSize * 2; //Creating A Brush Size To Change Later
+                brushClone.transform.rotation = hit.transform.rotation;
 
-                    brushClone.transform.localPosition = brushPosition; // Locate The Brush Position
-                    brushClone.transform.localScale = Vector3.one * _brushSize; //Creating A Brush Size To Change Later
-                    brushClone.transform.rotation = hit.transform.rotation;
-
-                    CalculatedPercentage();
-                    GameManager.Instance.OnSpraying(_decreaseRate);
-                }
+                CalculatedPercentage();
+                GameManager.Instance.OnSpraying(_decreaseRate);
             }
         }
     }
+
+
     void CalculatedPercentage()
     {
         GameManager.Instance.InitializePaintPurcentage(CalculatePaintingPercentage());

@@ -8,14 +8,20 @@ namespace TPSRunerGame.Movements
 {
     public class Mover
     {
-        PlayerController _playerController;
-        public Mover(PlayerController playerController)
+        Rigidbody _playerRigidbody;
+
+
+        public Mover(Rigidbody playerRigidbody)
         {
-            _playerController = playerController;
+            _playerRigidbody = playerRigidbody;
         }
         public void TickFixed(float horizontal, float vertical, float moveSpeedx, float speedZ)
         {
-            _playerController.transform.Translate(new Vector3(horizontal * Time.deltaTime * moveSpeedx, 0, vertical * speedZ * Time.deltaTime), Space.World);
+            Vector3 verticalDirection = Vector3.forward * vertical * speedZ;
+            // _playerRigidbody.transform.Translate(verticalDirection);
+
+            Vector3 horizontalDirection = Vector3.right * horizontal * moveSpeedx;
+            _playerRigidbody.velocity = horizontalDirection + verticalDirection;
         }
     }
 

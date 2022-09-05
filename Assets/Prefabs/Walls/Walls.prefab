@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5570830799790225717}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5570830799790225717
 Transform:
@@ -45,8 +45,16 @@ PrefabInstance:
       value: StaticObstacle
       objectReference: {fileID: 0}
     - target: {fileID: 8638418809910016881, guid: a676531664102524fbd281016a486d6c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638418809910016881, guid: a676531664102524fbd281016a486d6c, type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638418809910016881, guid: a676531664102524fbd281016a486d6c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8982997419827225035, guid: a676531664102524fbd281016a486d6c, type: 3}
       propertyPath: m_RootOrder
@@ -155,8 +163,16 @@ PrefabInstance:
       value: StaticObstacle (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9149182547039942117, guid: 0188ae7dd007bff4ba9c39f835fc4df8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149182547039942117, guid: 0188ae7dd007bff4ba9c39f835fc4df8, type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149182547039942117, guid: 0188ae7dd007bff4ba9c39f835fc4df8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0188ae7dd007bff4ba9c39f835fc4df8, type: 3}
