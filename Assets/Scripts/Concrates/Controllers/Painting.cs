@@ -15,6 +15,7 @@ public class Painting : MonoBehaviour
     [SerializeField] RenderTexture _wallRenderTexture;
     [SerializeField] int _objectPoolSize = 2000;
     [SerializeField] float _decreaseRate = 0.005f;
+    [SerializeField] float _oneTimePressRate = 0.01f;
 
     Vector3 _distanceBetweenWalls;
     LevelCreator _levelCreator;
@@ -43,6 +44,11 @@ public class Painting : MonoBehaviour
         while (GameManager.Instance.GameState == GameStates.InPanting)
         {
             yield return new WaitForSeconds(0.05f);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                GameManager.Instance.OnSpraying(_oneTimePressRate);
+            }
             if (!Input.GetMouseButton(0))
                 continue;
 

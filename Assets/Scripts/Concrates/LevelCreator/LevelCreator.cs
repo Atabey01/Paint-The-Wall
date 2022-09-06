@@ -213,7 +213,6 @@ public class LevelCreator : MonoBehaviour
                     if (platform.HasObstacle == false)
                     {
                         _horizontalObstacleList[i].transform.position = new Vector3(0, 2.8f, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
-                        Debug.Log(_levelDataList[CurrentLevel].PlatformList[randomIndex].gameObject.name + "HO");
                         platform.HasObstacle = true;
                     }
                     else
