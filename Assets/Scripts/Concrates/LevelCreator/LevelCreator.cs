@@ -247,7 +247,7 @@ public class LevelCreator : MonoBehaviour
         if (_levelDataList[CurrentLevel].RotatingPlatformList.Count != 0 && _isNewLevel == false)
         {
             RotatingPlatformList = Instantiate(_levelDataList[CurrentLevel].RotatingPlatformList[0]);
-            RotatingPlatformList.transform.position = new Vector3(_levelDataList[CurrentLevel].RotatingPlatformDestinationX, _levelDataList[CurrentLevel].RotatingPlatformDestinationY, _levelDataList[CurrentLevel].RotatingPlatformDestinationZ);
+            RotatingPlatformList.transform.position = new Vector3(_levelDataList[CurrentLevel].RotatingPlatformDestinationX, -RotatingPlatformList.GetComponent<MeshRenderer>().bounds.size.y / 2 - .15f, _levelDataList[CurrentLevel].RotatingPlatformDestinationZ);
         }
         #endregion
 
