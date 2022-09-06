@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using TMPro;
 
 public class PositionRankSystem : MonoBehaviour
 {
-    [SerializeField] Text _rankText;
+    [SerializeField] TextMeshProUGUI _rankText;
 
     List<GameObject> _allCharacters;
 
