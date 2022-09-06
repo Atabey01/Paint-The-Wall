@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class FPSControl : MonoBehaviour
 {
-    public Text FpsText;
-    public Text CurrentLevel;
+    public TextMeshProUGUI FpsText;
+    public TextMeshProUGUI CurrentLevel;
     public float DeltaTime;
 
     void Start()
