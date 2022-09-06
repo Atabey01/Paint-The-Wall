@@ -111,7 +111,7 @@ NavMeshSettings:
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 1
-    maxJumpAcrossDistance: 37.16
+    maxJumpAcrossDistance: 10
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666667
@@ -946,22 +946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Opponent (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 654347896653394754, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 654347896653394809, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
       propertyPath: StartPoint
       value: 
       objectReference: {fileID: 1032532420}
-    - target: {fileID: 654347896653394813, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
-      propertyPath: m_Mass
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 654347896653394813, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 654347896653394814, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1005,10 +993,6 @@ PrefabInstance:
     - target: {fileID: 654347896653394814, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 654347896653394815, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
-      propertyPath: m_Speed
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
@@ -1148,6 +1132,14 @@ PrefabInstance:
     - target: {fileID: 654347896653394815, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
       propertyPath: m_Speed
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 654347896653394815, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
+      propertyPath: m_AutoRepath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 654347896653394815, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
+      propertyPath: m_AutoTraverseOffMeshLink
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
@@ -6477,7 +6469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5558208621584101003, guid: f4c62febc4b696b4bb57bddb20c6e226, type: 3}
       propertyPath: _moveSpeedX
-      value: 850
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5558208621584101003, guid: f4c62febc4b696b4bb57bddb20c6e226, type: 3}
       propertyPath: _moveSpeedZ
