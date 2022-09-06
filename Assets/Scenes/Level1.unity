@@ -6210,7 +6210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11.000061, y: 0}
+  m_AnchoredPosition: {x: -11.000122, y: 0}
   m_SizeDelta: {x: -2, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1968134684
@@ -6893,7 +6893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5558208621584101003, guid: f4c62febc4b696b4bb57bddb20c6e226, type: 3}
       propertyPath: _moveSpeedX
-      value: 1250
+      value: 1400
       objectReference: {fileID: 0}
     - target: {fileID: 5558208621584101003, guid: f4c62febc4b696b4bb57bddb20c6e226, type: 3}
       propertyPath: _moveSpeedZ
@@ -6907,6 +6907,10 @@ PrefabInstance:
       propertyPath: _audioManager
       value: 
       objectReference: {fileID: 1737211284}
+    - target: {fileID: 5558208621584101003, guid: f4c62febc4b696b4bb57bddb20c6e226, type: 3}
+      propertyPath: _yAxisBoundary
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 5558208621584101014, guid: f4c62febc4b696b4bb57bddb20c6e226, type: 3}
       propertyPath: m_RootOrder
       value: 9
