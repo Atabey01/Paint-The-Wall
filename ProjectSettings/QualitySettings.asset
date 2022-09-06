@@ -4,22 +4,22 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 0
+  m_CurrentQuality: 2
   m_QualitySettings:
   - serializedVersion: 2
     name: Very Low
     pixelLightCount: 0
-    shadows: 2
+    shadows: 0
     shadowResolution: 0
     shadowProjection: 1
     shadowCascades: 1
-    shadowDistance: 20
+    shadowDistance: 15
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
     skinWeights: 1
-    textureQuality: 0
+    textureQuality: 1
     anisotropicTextures: 0
     antiAliasing: 0
     softParticles: 0
@@ -76,9 +76,8 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: 0677001dbada51b46b2a4839cb1d773a, type: 2}
-    excludedTargetPlatforms:
-    - Android
+    customRenderPipeline: {fileID: 0}
+    excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Medium
     pixelLightCount: 1
@@ -99,7 +98,7 @@ QualitySettings:
     softVegetation: 0
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
-    vSyncCount: 1
+    vSyncCount: 0
     lodBias: 0.7
     maximumLODLevel: 0
     streamingMipmapsActive: 0
@@ -113,9 +112,8 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: ba4c44889653754478968e7b499a31af, type: 2}
-    excludedTargetPlatforms:
-    - Android
+    customRenderPipeline: {fileID: 0}
+    excludedTargetPlatforms: []
   - serializedVersion: 2
     name: High
     pixelLightCount: 2
@@ -150,7 +148,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: c155e0f1d3d354f40825a9ae9e114faa, type: 2}
+    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Android
   - serializedVersion: 2
@@ -187,7 +185,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: 96b52a3db8ddf4444af0e1d38a7950d5, type: 2}
+    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Android
   - serializedVersion: 2
@@ -224,11 +222,11 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: 041d9ef90fb94354d83a9b10963ae825, type: 2}
+    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Android
   m_PerPlatformDefaultQuality:
-    Android: 0
+    Android: 2
     CloudRendering: 5
     EmbeddedLinux: 5
     GameCoreScarlett: 5

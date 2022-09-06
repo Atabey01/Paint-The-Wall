@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 1cf6f4c6e6e0518419839d3f5448dd99, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2bd8959f5fbd3644aa33af1a155fc147, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -111,7 +111,7 @@ NavMeshSettings:
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 1
-    maxJumpAcrossDistance: 10
+    maxJumpAcrossDistance: 37.16
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666667
@@ -866,10 +866,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Opponent (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 654347896653394754, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 654347896653394809, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
       propertyPath: StartPoint
       value: 
       objectReference: {fileID: 1032532420}
+    - target: {fileID: 654347896653394813, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
+      propertyPath: m_Mass
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 654347896653394813, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 654347896653394814, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -913,6 +925,10 @@ PrefabInstance:
     - target: {fileID: 654347896653394814, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 654347896653394815, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
+      propertyPath: m_Speed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
@@ -1052,14 +1068,6 @@ PrefabInstance:
     - target: {fileID: 654347896653394815, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
       propertyPath: m_Speed
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 654347896653394815, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
-      propertyPath: m_AutoRepath
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 654347896653394815, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3ebe04f09e188a4a805994dfd3e6e8a, type: 3}
@@ -6680,11 +6688,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3802102261773262654, guid: 7490e77c0c474b6458d4a0caa5f578ae, type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3802102261773262654, guid: 7490e77c0c474b6458d4a0caa5f578ae, type: 3}
       propertyPath: m_Shadows.m_Strength
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3802102261773262655, guid: 7490e77c0c474b6458d4a0caa5f578ae, type: 3}
       propertyPath: m_RootOrder
@@ -6745,7 +6753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5558208621584101003, guid: f4c62febc4b696b4bb57bddb20c6e226, type: 3}
       propertyPath: _moveSpeedX
-      value: 1000
+      value: 850
       objectReference: {fileID: 0}
     - target: {fileID: 5558208621584101003, guid: f4c62febc4b696b4bb57bddb20c6e226, type: 3}
       propertyPath: _moveSpeedZ
