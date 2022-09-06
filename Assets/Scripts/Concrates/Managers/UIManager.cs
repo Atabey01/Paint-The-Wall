@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 namespace TPSRunerGame.Controllers
 {
@@ -15,7 +16,7 @@ namespace TPSRunerGame.Controllers
         [SerializeField] GameObject _finishLine;
 
         [Header("Panels")]
-        [SerializeField] Text _rankText;
+        [SerializeField] TextMeshProUGUI _rankText;
         [SerializeField] GameObject _startPanel;
         [SerializeField] GameObject _deathPanel;
         [SerializeField] GameObject _LoosePanel;
