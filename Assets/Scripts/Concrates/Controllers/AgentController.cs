@@ -20,10 +20,7 @@ public class AgentController : MonoBehaviour
         _agentStartPoint = transform.position;
         _agentStartRotation = transform.position;
     }
-    private void Start()
-    {
-        _agent.speed = 10;
-    }
+
 
     private void OnEnable()
     {
