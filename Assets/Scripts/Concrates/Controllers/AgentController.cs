@@ -14,7 +14,7 @@ public class AgentController : MonoBehaviour
     Vector3 _agentStartRotation;
     private void Awake()
     {
-        _animator = GetComponentInChildren<Animator>();
+        _animator = GetComponent<Animator>();
         _rb = GetComponentInChildren<Rigidbody>();
         _agent = GetComponent<NavMeshAgent>();
         _agentStartPoint = transform.position;

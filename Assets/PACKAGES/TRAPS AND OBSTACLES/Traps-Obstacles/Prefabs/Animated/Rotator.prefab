@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6995691520660250079}
   - component: {fileID: 3015047800252277805}
   - component: {fileID: 5228502952230771814}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Obstacle-31.002
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9128830550298750836
 Transform:
@@ -111,12 +111,12 @@ GameObject:
   - component: {fileID: 7276690877864181069}
   - component: {fileID: 8176929359743122852}
   - component: {fileID: 6785566290887954684}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Obstacle-31.000
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3829252860285025324
 Transform:
@@ -210,12 +210,12 @@ GameObject:
   - component: {fileID: 5203132648466890436}
   - component: {fileID: 8317805476393120220}
   - component: {fileID: 2370694134798716224}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Obstacle-31.001
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4727509177268905646
 Transform:
@@ -309,12 +309,12 @@ GameObject:
   - component: {fileID: 7985630090934654684}
   - component: {fileID: 1075825139143755023}
   - component: {fileID: 2100148355886649854}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Rotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7590836134292874145
 Transform:
@@ -395,12 +395,12 @@ GameObject:
   - component: {fileID: 2920006755379989640}
   - component: {fileID: 6056832005688884507}
   - component: {fileID: 2670756710029613948}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Obstacle-31.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7324136001709739102
 Transform:

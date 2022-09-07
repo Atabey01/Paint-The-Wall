@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2540186421135651556}
   - component: {fileID: 2968429003647934233}
   - component: {fileID: 861704238307007484}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Obstacle-29.000
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8636893400838167024}
   - component: {fileID: 195193538116160716}
   - component: {fileID: 89467905503231764}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Obstacle-29.002
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6432554729614125047}
   - component: {fileID: 6831889231178953949}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Donut
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 1651647860371640996}
   - component: {fileID: 3741115309342252364}
   - component: {fileID: 8586383668405760948}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Obstacle-29.001
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

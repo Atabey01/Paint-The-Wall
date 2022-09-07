@@ -62,7 +62,7 @@ public class LevelCreator : MonoBehaviour
         newLevel.PlatformList = new List<GameObject>();
         for (int i = 0; i < Mathf.CeilToInt((CurrentLevel + 1) * 4 * 3 / 4); i++)
         {
-            GameObject platformInstance = Instantiate(platform, Vector3.zero, Quaternion.identity);
+            GameObject platformInstance = Instantiate(platform, new Vector3(0, -platform.GetComponent<MeshRenderer>().bounds.size.y / 2, 0), Quaternion.identity);
             allPlatforms.Add(platformInstance);
             _navMeshSurfaces.Add(platformInstance.GetComponent<NavMeshSurface>());
         }
@@ -70,7 +70,7 @@ public class LevelCreator : MonoBehaviour
         newLevel.RotatingPlatformList = new List<GameObject>();
         for (int j = 0; j < Mathf.FloorToInt((CurrentLevel + 1) * 4 / 4); j++)
         {
-            GameObject rotatingPlatformInstance = Instantiate(rotatingPlatform, new Vector3(0, -rotatingPlatform.GetComponent<MeshRenderer>().bounds.size.y / 2 - .15f, 0), Quaternion.identity);
+            GameObject rotatingPlatformInstance = Instantiate(rotatingPlatform, new Vector3(0, -rotatingPlatform.GetComponent<MeshRenderer>().bounds.size.y / 2 - .08f, 0), Quaternion.identity);
             allPlatforms.Add(rotatingPlatformInstance);
         }
 
@@ -84,10 +84,10 @@ public class LevelCreator : MonoBehaviour
             if (allPlatforms[randomIndex].gameObject.name == "RotatingPlatform(Clone)" && allPlatforms.Count == (CurrentLevel + 1) * 4)
             {
                 _totalDistance += allPlatforms[0].GetComponent<MeshRenderer>().bounds.size.z;
-                allPlatforms[0].transform.position = new Vector3(allPlatforms[0].transform.position.x, allPlatforms[0].transform.position.y, _totalDistance);
+                allPlatforms[0].transform.position = new Vector3(allPlatforms[0].transform.position.x, -allPlatforms[0].GetComponent<MeshRenderer>().bounds.size.y / 2, _totalDistance);
 
                 lastPlatform = allPlatforms[0];
-                if (allPlatforms[0].gameObject.name == "Plane(Clone)")
+                if (allPlatforms[0].gameObject.name == "PlaneNew(Clone)")
                     newLevel.PlatformList.Add(allPlatforms[0]);
                 else
                     newLevel.RotatingPlatformList.Add(allPlatforms[0]);
@@ -98,14 +98,14 @@ public class LevelCreator : MonoBehaviour
                 if (allPlatforms[randomIndex].gameObject.name == "RotatingPlatform(Clone)" && allPlatforms.Count == 1)
                 {
                     Destroy(allPlatforms[randomIndex]);
-                    allPlatforms[randomIndex] = Instantiate(platform, Vector3.zero, Quaternion.identity);
+                    allPlatforms[randomIndex] = Instantiate(platform, new Vector3(0, -platform.GetComponent<MeshRenderer>().bounds.size.y / 2, 0), Quaternion.identity);
                     _navMeshSurfaces.Add(allPlatforms[randomIndex].GetComponent<NavMeshSurface>());
                 }
                 _totalDistance += lastPlatform.GetComponent<MeshRenderer>().bounds.size.z / 2 + allPlatforms[randomIndex].GetComponent<MeshRenderer>().bounds.size.z / 2 - .5f;
                 allPlatforms[randomIndex].transform.position = new Vector3(allPlatforms[randomIndex].transform.position.x, allPlatforms[randomIndex].transform.position.y, _totalDistance);
 
                 lastPlatform = allPlatforms[randomIndex];
-                if (allPlatforms[randomIndex].gameObject.name == "Plane(Clone)")
+                if (allPlatforms[randomIndex].gameObject.name == "PlaneNew(Clone)")
                     newLevel.PlatformList.Add(allPlatforms[randomIndex]);
                 else
                     newLevel.RotatingPlatformList.Add(allPlatforms[randomIndex]);
@@ -115,9 +115,9 @@ public class LevelCreator : MonoBehaviour
             k -= 1;
         }
 
-        newLevel.FinishLine.transform.position = lastPlatform.transform.position;
-        newLevel.GameEndPoint.transform.position = lastPlatform.transform.position;
-        newLevel.Painting[0].transform.position = newLevel.FinishLine.transform.position;
+        newLevel.FinishLine.transform.position = lastPlatform.transform.position.z * Vector3.forward;
+        newLevel.GameEndPoint.transform.position = lastPlatform.transform.position.z * Vector3.forward;
+        newLevel.Painting[0].transform.position = newLevel.FinishLine.transform.position.z * Vector3.forward;
 
         newLevel.Sprays = new List<GameObject>(new GameObject[newLevel.PlatformList.Count]);
         for (int i = 0; i < newLevel.Sprays.Count; i++)
@@ -201,7 +201,7 @@ public class LevelCreator : MonoBehaviour
             if (_isNewLevel == false)
                 for (int i = 0; i < _horizontalObstacleList.Count; i++)
                 {
-                    _horizontalObstacleList[i].transform.position = new Vector3(0, 2.8f, _levelDataList[CurrentLevel].HorizontalObstacleDestinationList[i]);
+                    _horizontalObstacleList[i].transform.position = new Vector3(0, 0, _levelDataList[CurrentLevel].HorizontalObstacleDestinationList[i]);
                 }
             else
             {
@@ -212,7 +212,7 @@ public class LevelCreator : MonoBehaviour
                     Platform platform = _levelDataList[CurrentLevel].PlatformList[randomIndex].GetComponent<Platform>();
                     if (platform.HasObstacle == false)
                     {
-                        _horizontalObstacleList[i].transform.position = new Vector3(0, 2.8f, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
+                        _horizontalObstacleList[i].transform.position = new Vector3(0, 0, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
                         platform.HasObstacle = true;
                     }
                     else
@@ -237,7 +237,7 @@ public class LevelCreator : MonoBehaviour
             }
             for (int i = 0; i < _platformList.Count; i++)
             {
-                _platformList[i].transform.position = new Vector3(0, 0, _levelDataList[CurrentLevel].PlatformsDestinationList[i]);
+                _platformList[i].transform.position = new Vector3(0, -_platformList[i].GetComponent<MeshRenderer>().bounds.size.y / 2, _levelDataList[CurrentLevel].PlatformsDestinationList[i]);
             }
         }
         #endregion
@@ -246,7 +246,7 @@ public class LevelCreator : MonoBehaviour
         if (_levelDataList[CurrentLevel].RotatingPlatformList.Count != 0 && _isNewLevel == false)
         {
             RotatingPlatformList = Instantiate(_levelDataList[CurrentLevel].RotatingPlatformList[0]);
-            RotatingPlatformList.transform.position = new Vector3(_levelDataList[CurrentLevel].RotatingPlatformDestinationX, -RotatingPlatformList.GetComponent<MeshRenderer>().bounds.size.y / 2 , _levelDataList[CurrentLevel].RotatingPlatformDestinationZ);
+            RotatingPlatformList.transform.position = new Vector3(_levelDataList[CurrentLevel].RotatingPlatformDestinationX, -RotatingPlatformList.GetComponent<MeshRenderer>().bounds.size.y / 2, _levelDataList[CurrentLevel].RotatingPlatformDestinationZ);
         }
         #endregion
 

@@ -46,6 +46,7 @@ namespace TPSRunerGame.Controllers
             _mover = new Mover(playerRigidbody);
             _inputManager = new InputManager();
             _levelCreateor = FindObjectOfType<LevelCreator>();
+            _animator = GetComponent<Animator>();
 
         }
         private void Start()
@@ -104,6 +105,7 @@ namespace TPSRunerGame.Controllers
             {
                 //gameover
                 GameManager.Instance.IntializePainting();
+                Camera.main.cullingMask = LayerMask.GetMask("Dynamic", "Default", "Static", "UI");
                 _audioManager.PlayWinSound();
                 ShowParticalEffects();
                 collision.gameObject.SetActive(false);

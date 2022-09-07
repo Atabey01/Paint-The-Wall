@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   _horizontalObstacle:
-  - {fileID: 4536682209440582789, guid: 033ba67c55352db4cbdb30c916ae178e, type: 3}
-  - {fileID: 4536682209440582789, guid: 033ba67c55352db4cbdb30c916ae178e, type: 3}
-  - {fileID: 4536682209440582789, guid: 033ba67c55352db4cbdb30c916ae178e, type: 3}
+  - {fileID: 6623278485620819788, guid: 3cb31cb4da6111a47b7c311217501993, type: 3}
+  - {fileID: 6623278485620819788, guid: 3cb31cb4da6111a47b7c311217501993, type: 3}
+  - {fileID: 6623278485620819788, guid: 3cb31cb4da6111a47b7c311217501993, type: 3}
   _horizontalObstacleDestinationList: 100000002400000055000000
   _platformList:
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
-  - {fileID: 1092914240614277185, guid: dccd486602f8c0344b8d8e08a6b85fd8, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
+  - {fileID: 8608353137286857565, guid: 21db559f772fd8e4d9a3e6580e6221a2, type: 3}
   _platformsDestinationList: 030000000d00000017000000210000002b000000350000003f00000049000000530000005d0000006700000071000000
   _paintingDistance: 112
   _painting:
@@ -62,3 +62,5 @@ MonoBehaviour:
   _rotatingPlatformDestinationZ: 0
   _donut: []
   _donutDestination: 0
+  _rotatorList: []
+  _staticObstacleList: []
