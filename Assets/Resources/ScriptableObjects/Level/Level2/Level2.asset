@@ -60,9 +60,9 @@ MonoBehaviour:
   _endPoint: {fileID: 5127849893887797877, guid: a6b6b42298daf0e4db379dcdc3414bd3, type: 3}
   _FinishLineDestinationList: 8c000000
   _rotatingPlatformList:
-  - {fileID: 2438379396080430340, guid: 6885319bd8f2cd84382be9ee43cd10da, type: 3}
-  - {fileID: 2438379396080430340, guid: 6885319bd8f2cd84382be9ee43cd10da, type: 3}
-  - {fileID: 2438379396080430340, guid: 6885319bd8f2cd84382be9ee43cd10da, type: 3}
+  - {fileID: 8155630072775968673, guid: 6885319bd8f2cd84382be9ee43cd10da, type: 3}
+  - {fileID: 8155630072775968673, guid: 6885319bd8f2cd84382be9ee43cd10da, type: 3}
+  - {fileID: 8155630072775968673, guid: 6885319bd8f2cd84382be9ee43cd10da, type: 3}
   _rotatingPlatformDestinationX: 0
   _rotatingPlatformDestinationY: -16.2
   _rotatingPlatformDestinationZ: 53.5

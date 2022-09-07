@@ -72,6 +72,7 @@ public class LevelCreator : MonoBehaviour
         {
             GameObject rotatingPlatformInstance = Instantiate(rotatingPlatform, new Vector3(0, -rotatingPlatform.GetComponent<MeshRenderer>().bounds.size.y / 2 - .08f, 0), Quaternion.identity);
             allPlatforms.Add(rotatingPlatformInstance);
+            _navMeshSurfaces.Add(rotatingPlatformInstance.GetComponent<NavMeshSurface>());
         }
 
         GameObject lastPlatform = null;
@@ -247,6 +248,7 @@ public class LevelCreator : MonoBehaviour
         {
             RotatingPlatformList = Instantiate(_levelDataList[CurrentLevel].RotatingPlatformList[0]);
             RotatingPlatformList.transform.position = new Vector3(_levelDataList[CurrentLevel].RotatingPlatformDestinationX, -RotatingPlatformList.GetComponent<MeshRenderer>().bounds.size.y / 2, _levelDataList[CurrentLevel].RotatingPlatformDestinationZ);
+            _navMeshSurfaces.Add(RotatingPlatformList.GetComponent<NavMeshSurface>());
         }
         #endregion
 
@@ -361,8 +363,12 @@ public class LevelCreator : MonoBehaviour
         }
         #endregion
 
+        print(_navMeshSurfaces.Count);
         #region Bake NavMesh
-        _navMeshSurfaces[0].BuildNavMesh();
+        for (int i = 0; i < _navMeshSurfaces.Count; i++)
+        {
+            _navMeshSurfaces[i].BuildNavMesh();
+        }
         #endregion
     }
 }
