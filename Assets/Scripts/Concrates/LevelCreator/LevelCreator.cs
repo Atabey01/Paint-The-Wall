@@ -299,7 +299,7 @@ public class LevelCreator : MonoBehaviour
                 Platform platform = _levelDataList[CurrentLevel].PlatformList[randomIndex].GetComponent<Platform>();
                 if (platform.HasObstacle == false)
                 {
-                    _rotatorList[i].transform.position = new Vector3(Random.Range(0, 2) == 0 ? -3 : 3, 1.5f, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
+                    _rotatorList[i].transform.position = new Vector3(Random.Range(0, 2) == 0 ? -3 : 3, 0, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
                     platform.HasObstacle = true;
                 }
                 else
@@ -328,7 +328,7 @@ public class LevelCreator : MonoBehaviour
                 Platform platform = _levelDataList[CurrentLevel].PlatformList[randomIndex].GetComponent<Platform>();
                 if (platform.HasObstacle == false)
                 {
-                    _staticObstacleList[i].transform.position = new Vector3(0, 1.5f, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
+                    _staticObstacleList[i].transform.position = new Vector3(0, 0, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
                     platform.HasObstacle = true;
                 }
                 else
