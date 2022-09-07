@@ -67,9 +67,9 @@ MonoBehaviour:
   _rotatingPlatformDestinationY: -16.2
   _rotatingPlatformDestinationZ: 53.5
   _donut:
-  - {fileID: 1486796821286452571, guid: f447072f96a2e8a408c814d1943c45cd, type: 3}
+  - {fileID: 5912899612210429261, guid: 708cf58c0fb7019489d5060c77af8ef4, type: 3}
   _donutDestination: 80
   _rotatorList:
-  - {fileID: 8923850852309091494, guid: 16bf1df0527f25f4ea093f7940f20c69, type: 3}
+  - {fileID: 7067205080030230811, guid: 610433117ac2e6144b9f4952faf42c34, type: 3}
   _staticObstacleList:
-  - {fileID: 3025731537356432313, guid: 7023d05b220236b439c433d917144847, type: 3}
+  - {fileID: 7427793593962586049, guid: 094d0ab4e02da9c42ad4ab7b20fb7644, type: 3}

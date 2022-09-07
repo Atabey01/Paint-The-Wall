@@ -70,7 +70,7 @@ public class LevelCreator : MonoBehaviour
         newLevel.RotatingPlatformList = new List<GameObject>();
         for (int j = 0; j < Mathf.FloorToInt((CurrentLevel + 1) * 4 / 4); j++)
         {
-            GameObject rotatingPlatformInstance = Instantiate(rotatingPlatform, new Vector3(0, -rotatingPlatform.GetComponent<MeshRenderer>().bounds.size.y / 2 - .1f, 0), Quaternion.identity);
+            GameObject rotatingPlatformInstance = Instantiate(rotatingPlatform, new Vector3(0, -rotatingPlatform.GetComponent<MeshRenderer>().bounds.size.y / 2 - .15f, 0), Quaternion.identity);
             allPlatforms.Add(rotatingPlatformInstance);
         }
 
@@ -246,7 +246,7 @@ public class LevelCreator : MonoBehaviour
         if (_levelDataList[CurrentLevel].RotatingPlatformList.Count != 0 && _isNewLevel == false)
         {
             RotatingPlatformList = Instantiate(_levelDataList[CurrentLevel].RotatingPlatformList[0]);
-            RotatingPlatformList.transform.position = new Vector3(_levelDataList[CurrentLevel].RotatingPlatformDestinationX, -RotatingPlatformList.GetComponent<MeshRenderer>().bounds.size.y / 2 - .1f, _levelDataList[CurrentLevel].RotatingPlatformDestinationZ);
+            RotatingPlatformList.transform.position = new Vector3(_levelDataList[CurrentLevel].RotatingPlatformDestinationX, -RotatingPlatformList.GetComponent<MeshRenderer>().bounds.size.y / 2 , _levelDataList[CurrentLevel].RotatingPlatformDestinationZ);
         }
         #endregion
 
@@ -299,7 +299,7 @@ public class LevelCreator : MonoBehaviour
                 Platform platform = _levelDataList[CurrentLevel].PlatformList[randomIndex].GetComponent<Platform>();
                 if (platform.HasObstacle == false)
                 {
-                    _rotatorList[i].transform.position = new Vector3(Random.Range(0, 2) == 0 ? -3 : 3, 1.5f, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
+                    _rotatorList[i].transform.position = new Vector3(Random.Range(0, 2) == 0 ? -3 : 3, 0, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
                     platform.HasObstacle = true;
                 }
                 else
@@ -328,7 +328,7 @@ public class LevelCreator : MonoBehaviour
                 Platform platform = _levelDataList[CurrentLevel].PlatformList[randomIndex].GetComponent<Platform>();
                 if (platform.HasObstacle == false)
                 {
-                    _staticObstacleList[i].transform.position = new Vector3(0, 1.5f, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
+                    _staticObstacleList[i].transform.position = new Vector3(0, 0, _levelDataList[CurrentLevel].PlatformList[randomIndex].transform.position.z);
                     platform.HasObstacle = true;
                 }
                 else
@@ -362,10 +362,7 @@ public class LevelCreator : MonoBehaviour
         #endregion
 
         #region Bake NavMesh
-        for (int i = 0; i < _navMeshSurfaces.Count; i++)
-        {
-            _navMeshSurfaces[i].BuildNavMesh();
-        }
+        _navMeshSurfaces[0].BuildNavMesh();
         #endregion
     }
 }

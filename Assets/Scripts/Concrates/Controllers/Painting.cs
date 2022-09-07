@@ -43,7 +43,7 @@ public class Painting : MonoBehaviour
     {
         while (GameManager.Instance.GameState == GameStates.InPanting)
         {
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.01f);
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -67,7 +67,7 @@ public class Painting : MonoBehaviour
                 GameObject brushClone = GetPooledObject();
 
                 brushClone.transform.localPosition = brushPosition; // Locate The Brush Position
-                brushClone.transform.localScale = Vector3.one * _brushSize * 2; //Creating A Brush Size To Change Later
+                brushClone.transform.localScale = Vector3.one * _brushSize * 2.2f; //Creating A Brush Size To Change Later
                 brushClone.transform.rotation = hit.transform.rotation;
 
                 CalculatedPercentage();
