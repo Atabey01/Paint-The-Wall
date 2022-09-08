@@ -28,22 +28,24 @@ public class Painting : MonoBehaviour
     void Awake()
     {
         _objectPool = new Queue<GameObject>(); // Creating A Queue For Object Pool
-        _levelCreator = FindObjectOfType<LevelCreator>();
         ObjectPooling();
     }
     void Start()
     {
+        _levelCreator = FindObjectOfType<LevelCreator>();
+
         _distanceBetweenWalls = _rendererWall.transform.position - transform.position;
         _decreaseRate += _levelCreator.CurrentLevel * 0.001f;
 
         StartCoroutine(PaintingCor());
+
     }
 
     IEnumerator PaintingCor()
     {
         while (GameManager.Instance.GameState == GameStates.InPanting)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForEndOfFrame();
 
             if (Input.GetMouseButtonDown(0))
             {
