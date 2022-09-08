@@ -16,6 +16,7 @@ namespace TPSRunerGame.Controllers
         [Header("Game Element Veriables")]
         [SerializeField] Transform _startPoint;
         //[SerializeField] List<GameObject> _particalEffects;
+        [SerializeField] ParticleSystem _deathParticle;
         ParticleSystem effects;
         #endregion
 
@@ -99,6 +100,9 @@ namespace TPSRunerGame.Controllers
         {
             if (collision.gameObject.CompareTag("Obstacle"))
             {
+                _deathParticle.Play();
+                GetComponent<Rigidbody>().useGravity = false;
+                GetComponent<Collider>().enabled = false;
                 GameManager.Instance.InitializeGameOver();
             }
             else if (collision.gameObject.CompareTag("Finish"))

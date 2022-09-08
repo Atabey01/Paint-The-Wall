@@ -38,14 +38,13 @@ public class Painting : MonoBehaviour
         _decreaseRate += _levelCreator.CurrentLevel * 0.001f;
 
         StartCoroutine(PaintingCor());
-
     }
 
     IEnumerator PaintingCor()
     {
         while (GameManager.Instance.GameState == GameStates.InPanting)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.01f);
 
             if (Input.GetMouseButtonDown(0))
             {

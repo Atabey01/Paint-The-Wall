@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5745966732650837328}
   - component: {fileID: 454049942679421563}
   - component: {fileID: 8452571278593435280}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Obstacle-18.002
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 5063211465546890940}
   - component: {fileID: 6564581209033940912}
   - component: {fileID: 6587410725713733736}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Obstacle-18.003
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 1735861872627712081}
   - component: {fileID: 5406872071908978517}
   - component: {fileID: 918878407418362058}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Obstacle-18.001
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -311,9 +311,10 @@ GameObject:
   - component: {fileID: 8594422880656988521}
   - component: {fileID: 1233640065020587195}
   - component: {fileID: 3583561697872154092}
-  m_Layer: 6
+  - component: {fileID: 7305815109564479097}
+  m_Layer: 7
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -437,3 +438,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!208 &7305815109564479097
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8900502382564736602}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.84900004, y: 0.84900004, z: 0.2}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.019000001, y: 0.85, z: -0.001}
+  m_TimeToStationary: 0.5

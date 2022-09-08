@@ -63,6 +63,8 @@ public class AgentController : MonoBehaviour
 
     void StartFromBegining()
     {
+        GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Collider>().enabled = false;
         StartCoroutine(AgentDeath());
     }
     public IEnumerator AgentDeath() //Repositioning When The Agent Dies 
@@ -72,8 +74,11 @@ public class AgentController : MonoBehaviour
         _rb.isKinematic = true;
 
         yield return new WaitForSecondsRealtime(2); // Delay And Repositioning For The Agents Death Animations When Agent Die
+        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Collider>().enabled = true;
         transform.position = _agentStartRotation;
         _animator.SetBool("isAgentDeath", false);
+        _rb.velocity = Vector3.zero;
         _rb.isKinematic = false;
         _agent.isStopped = false;
 

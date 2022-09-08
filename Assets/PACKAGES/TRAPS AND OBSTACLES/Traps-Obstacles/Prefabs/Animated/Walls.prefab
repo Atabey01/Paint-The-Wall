@@ -122,18 +122,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7427793593962586050}
     m_Modifications:
-    - target: {fileID: 4266885382495223301, guid: f6a9d45f5760fb1489edb8a46fb0875a, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616765734575644120, guid: f6a9d45f5760fb1489edb8a46fb0875a, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6699656545406166883, guid: f6a9d45f5760fb1489edb8a46fb0875a, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 8128785594273342688, guid: f6a9d45f5760fb1489edb8a46fb0875a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -181,14 +169,6 @@ PrefabInstance:
     - target: {fileID: 8900502382564736602, guid: f6a9d45f5760fb1489edb8a46fb0875a, type: 3}
       propertyPath: m_Name
       value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900502382564736602, guid: f6a9d45f5760fb1489edb8a46fb0875a, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900502382564736602, guid: f6a9d45f5760fb1489edb8a46fb0875a, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6a9d45f5760fb1489edb8a46fb0875a, type: 3}
